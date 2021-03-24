@@ -53,9 +53,9 @@ for (i in 1:length(introns.ret.samp)) {
   retint.samp.gr[[i]]<-makeGRangesFromDataFrame(introns.ret.samp[[i]], seqnames.field = "Chromosome", start.field = "Start", end.field = "End", strand.field = "Strand")
 }
 
-NOMe.peaks.files<-c("/spectrum/GSCT/veronikap/DEEP/NOMe/monocytes/gnomePeaks/Hm01.BlMo.NOMe.peaks",
-                    "/spectrum/GSCT/veronikap/DEEP/NOMe/monocytes/gnomePeaks/Hm05.BlMo.NOMe.peaks",
-                    "/spectrum/GSCT/veronikap/DEEP/NOMe/macrophages/gnomePeaks/Hm05.BlMa.NOMe.peaks") ###loading NOMe peaks data
+NOMe.peaks.files<-c("NOMe/Hm01.BlMo.NOMe.peaks",
+                    "NOMe/Hm05.BlMo.NOMe.peaks",
+                    "NOMs/Hm05.BlMa.NOMe.peaks") ###loading NOMe peaks data
 
 NOMe.peaks<-list()
 for (i in 1:length(NOMe.peaks.files)) {
@@ -85,9 +85,9 @@ introns.ret.samp[[1]]$gnomePeak_olap_100bp5ss<-ifelse(is.na(introns.ret.samp[[1]
 
 
 ## identifying overlaps between the regions of interest and nucleosome free regions, as predicted using gNOMePeaks
-NOMe.peaks.NFR.files<-c("/spectrum/GSCT/veronikap/DEEP/NOMe/monocytes/gnomePeaks/Hm01.BlMo.NOMe.NFRpeaks",
-                        "/spectrum/GSCT/veronikap/DEEP/NOMe/monocytes/gnomePeaks/Hm05.BlMo.NOMe.CpGmethpeaks",
-                        "/spectrum/GSCT/veronikap/DEEP/NOMe/macrophages/gnomePeaks/Hm05.BlMa.NOMe.NFRpeaks") ###loading NOMe peaks data
+NOMe.peaks.NFR.files<-c("NOMe/Hm01.BlMo.NOMe.NFRpeaks",
+                        "NOMe/Hm05.BlMo.NOMe.CpGmethpeaks",
+                        "NOMe/Hm05.BlMa.NOMe.NFRpeaks") ###loading NOMe peaks data
 
 NOMe.peaks.NFR<-list()
 for (i in 1:length(NOMe.peaks.NFR.files)) {
@@ -114,7 +114,7 @@ Hm01.BlMo.gnomePeaks.tab<-cbind(as.data.frame(Hm01.BlMo.gnomePeaks.olaps), Hm01.
 introns.ret.samp[[1]]$gnomePeak_pcOlap_NFR_100bp5ss<-round(Hm01.BlMo.gnomePeaks.tab$Hm01.BlMo.gnomePeaks.percentOverlap, 4)[match(introns.ret.samp[[1]]$ID, Hm01.BlMo.gnomePeaks.tab$subjectHits)]
 introns.ret.samp[[1]]$gnomePeak_olap_NFR_100bp5ss<-ifelse(is.na(introns.ret.samp[[1]]$gnomePeak_pcOlap_NFR_100bp5ss), 0, 1)
 
-save(introns.ret.samp, file = "/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+save(introns.ret.samp, file = "introns.ret.samp.RData")
 
 ##same is repeated for 3' splice site and the middle of intron
 ##and non-retained introns
