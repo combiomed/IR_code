@@ -5,12 +5,12 @@ library(dplyr)
 library(GenomicRanges)
 
 ##loading raw output files
-pathsMeth<-c("/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlTN.bismark.cov",
-             "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlTN.bismark.cov",
-             "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlCM.bismark.cov",
-             "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlCM.bismark.cov",
-             "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlEM.bismark.cov",
-             "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlEM.bismark.cov")
+pathsMeth<-c("WGBS/Hf03_BlTN.bismark.cov",
+             "WGBS/Hf04_BlTN.bismark.cov",
+             "WGBS/Hf03_BlCM.bismark.cov",
+             "WGBS/Hf04_BlCM.bismark.cov",
+             "WGBS/Hf03_BlEM.bismark.cov",
+             "WGBS/Hf04_BlEM.bismark.cov")
 
 MethData<-list() #create empty list object##
 for (i in 1:length(pathsMeth)) {
@@ -25,12 +25,12 @@ for (i in 1:length(MethData)) {
 }
 
 #Adding strand info to the meth dataset#
-pathsMethStrand<-c("/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlTN.CpG.txt",
-                   "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlTN.CpG.txt",
-                   "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlCM.CpG.txt",
-                   "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlCM.CpG.txt",
-                   "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf03_BlEM.CpG.txt",
-                   "/spectrum/GSCT/veronikap/DEEP/WGBS/sampleTcells/Hf04_BlEM.CpG.txt")
+pathsMethStrand<-c("WGBS/Hf03_BlTN.CpG.txt",
+                   "WGBS/Hf04_BlTN.CpG.txt",
+                   "WGBS/Hf03_BlCM.CpG.txt",
+                   "WGBS/Hf04_BlCM.CpG.txt",
+                   "WGBS/Hf03_BlEM.CpG.txt",
+                   "WGBS/Hf04_BlEM.CpG.txt")
 
 MethStrand<-list()
 for (i in 1:length(pathsMethStrand)) {
@@ -54,8 +54,8 @@ for (i in 1:length(MethData.filtered)) {
   MethData.filtered[[i]]$Diff<-(lead(MethData.filtered[[i]]$Start, 1) - MethData.filtered[[i]]$Start)
 }
 
-save(MethData.filtered, file = "/home/veronikap/Tcell/MethData.filtered.RData") ##tis files keeps reads from both strands
-load("/home/veronikap/Tcell/MethData.filtered.samp.RData")
+save(MethData.filtered, file = "MethData.filtered.RData") ##tis files keeps reads from both strands
+load("MethData.filtered.samp.RData")
 
 MethData.filtered<-list() ##this files keeps reads from one strand only, to avoid bias in calculating the number of methylated CpG sites
 for (i in 1:length(MethData.filtered)){
@@ -69,8 +69,8 @@ for (i in 1:length(MethData.filtered)) {
   Meth.gr[[i]]<-makeGRangesFromDataFrame(MethData.filtered[[i]], seqnames.field = "Chromosome", start.field = "Start", end.field = "End", strand.field = "Strand")
 }
 
-save(MethData.filtered, file = "/home/veronikap/Tcell/MethData.filtered.RData")
-load("/home/veronikap/Tcell/MethData.filtered.subset.RData")
+save(MethData.filtered, file = "MethData.filtered.RData")
+load("MethData.filtered.RData")
 
-save(Meth.gr, file = "/home/veronikap/Tcell/Meth.gr.RData")
-load("/home/veronikap/Tcell/Meth.gr.RData")
+save(Meth.gr, file = "Meth.gr.RData")
+load("Meth.gr.RData")

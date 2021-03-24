@@ -7,10 +7,10 @@ library(dplyr)
 library(reshape2)
 library(ggplot2)
 
-load("/spectrum/GSCT/veronikap/DEEP/NOMe/Tcells/NOMeData.Hf03.filtered.RData")
-load("/spectrum/GSCT/veronikap/DEEP/NOMe/Tcells/NOMeData.Hf03.gr.RData")
-load("/home/veronikap/Tcell/introns.ret.repl.RData")
-load("/home/veronikap/Tcell/introns.nonret.repl.RData")
+load("NOMeData.Hf03.filtered.RData")
+load("NOMeData.Hf03.gr.RData")
+load("introns.ret.repl.RData")
+load("introns.nonret.repl.RData")
 
 retint.5splicepos.gr<-GRangesList()
 for (i in 1:length(introns.ret.repl)) {
@@ -84,31 +84,31 @@ for (i in 1:3) {
 Hf03.BlTN.retint.500bp.5ss.occup.mat<-retint.5ss.mat.GCHoccup[[1]]
 Hf03.BlCM.retint.500bp.5ss.occup.mat<-retint.5ss.mat.GCHoccup[[2]]
 Hf03.BlEM.retint.500bp.5ss.occup.mat<-retint.5ss.mat.GCHoccup[[3]]
-save(Hf03.BlTN.retint.500bp.5ss.occup.mat, file = "~/Tcell/indsamp/Hf03.BlTN.retint.500bp.5ss.occup.mat.RData") ###matrix is for +/- 100 bp around a splice site
-save(Hf03.BlCM.retint.500bp.5ss.occup.mat, file = "~/Tcell/indsamp/Hf03.BlCM.retint.500bp.5ss.occup.mat.RData")
-save(Hf03.BlEM.retint.500bp.5ss.occup.mat, file = "~/Tcell/indsamp/Hf03.BlEM.retint.500bp.5ss.occup.mat.RData")
+save(Hf03.BlTN.retint.500bp.5ss.occup.mat, file = "Hf03.BlTN.retint.500bp.5ss.occup.mat.RData") ###matrix is for +/- 100 bp around a splice site
+save(Hf03.BlCM.retint.500bp.5ss.occup.mat, file = "Hf03.BlCM.retint.500bp.5ss.occup.mat.RData")
+save(Hf03.BlEM.retint.500bp.5ss.occup.mat, file = "Hf03.BlEM.retint.500bp.5ss.occup.mat.RData")
 
 Hf03.BlTN.retint.500bpsmooth.5ss.NOMeGCH.mat<-retint.5ss.mat.NOMeGCH[[1]]
 Hf03.BlCM.retint.500bpsmooth.5ss.NOMeGCH.mat<-retint.5ss.mat.NOMeGCH[[2]]
 Hf03.BlEM.retint.500bpsmooth.5ss.NOMeGCH.mat<-retint.5ss.mat.NOMeGCH[[3]]
-save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "~/Tcell/indsamp/Hf03.BlTN.retint.500bpsmooth.5ss.NOMeGCH.mat.RData") ###matrix is for +/- 500 bp surround a splice
-save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "~/Tcell/indsamp/Hf03.BlCM.retint.500bpsmooth.5ss.NOMeGCH.mat.RData")
-save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "~/Tcell/indsamp/Hf03.BlEM.retint.500bpsmooth.5ss.NOMeGCH.mat.RData")
+save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "Hf03.BlTN.retint.500bpsmooth.5ss.NOMeGCH.mat.RData") ###matrix is for +/- 500 bp surround a splice
+save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "Hf03.BlCM.retint.500bpsmooth.5ss.NOMeGCH.mat.RData")
+save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMeGCH.mat, file = "Hf03.BlEM.retint.500bpsmooth.5ss.NOMeGCH.mat.RData")
 
 Hf03.BlTN.retint.500bpsmooth.5ss.NOMeTs.mat<-retint.5ss.mat.Ts[[1]]
 Hf03.BlCM.retint.500bpsmooth.5ss.NOMeTs.mat<-retint.5ss.mat.Ts[[2]]
 Hf03.BlEM.retint.500bpsmooth.5ss.NOMeTs.mat<-retint.5ss.mat.Ts[[3]]
-save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMeTs.mat, file = "~/Tcell/indsamp/Hf03.BlTN.retint.500bpsmooth.5ss.NOMeTs.mat.RData") ###matrix is for +/- 500 bp surround a splice
-save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMeTs.mat, file = "~/Tcell/indsamp/Hf03.BlCM.retint.500bpsmooth.5ss.NOMeTs.mat.RData")
-save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMeTs.mat, file = "~/Tcell/indsamp/Hf03.BlEM.retint.500bpsmooth.5ss.NOMeTs.mat.RData")
+save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMeTs.mat, file = "Hf03.BlTN.retint.500bpsmooth.5ss.NOMeTs.mat.RData") ###matrix is for +/- 500 bp surround a splice
+save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMeTs.mat, file = "Hf03.BlCM.retint.500bpsmooth.5ss.NOMeTs.mat.RData")
+save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMeTs.mat, file = "Hf03.BlEM.retint.500bpsmooth.5ss.NOMeTs.mat.RData")
 
 
 Hf03.BlTN.retint.500bpsmooth.5ss.NOMecov.mat<-retint.5ss.mat.cov[[1]]
 Hf03.BlCM.retint.500bpsmooth.5ss.NOMecov.mat<-retint.5ss.mat.cov[[2]]
 Hf03.BlEM.retint.500bpsmooth.5ss.NOMecov.mat<-retint.5ss.mat.cov[[3]]
-save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMecov.mat, file = "~/Tcell/indsamp/Hf03.BlTN.retint.500bpsmooth.5ss.NOMecov.mat.RData") ###matrix is for +/- 500 bp surround a splice
-save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMecov.mat, file = "~/Tcell/indsamp/Hf03.BlCM.retint.500bpsmooth.5ss.NOMecov.mat.RData")
-save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMecov.mat, file = "~/Tcell/indsamp/Hf03.BlEM.retint.500bpsmooth.5ss.NOMecov.mat.RData")
+save(Hf03.BlTN.retint.500bpsmooth.5ss.NOMecov.mat, file = "Hf03.BlTN.retint.500bpsmooth.5ss.NOMecov.mat.RData") ###matrix is for +/- 500 bp surround a splice
+save(Hf03.BlCM.retint.500bpsmooth.5ss.NOMecov.mat, file = "Hf03.BlCM.retint.500bpsmooth.5ss.NOMecov.mat.RData")
+save(Hf03.BlEM.retint.500bpsmooth.5ss.NOMecov.mat, file = "Hf03.BlEM.retint.500bpsmooth.5ss.NOMecov.mat.RData")
 
 ##same is repeated for non-retained introns
 ## for 3' ss and the middle of introns

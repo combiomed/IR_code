@@ -4,36 +4,36 @@
 ## bedtools output is loaded into R
 
 load("/home/veronikap/MONvsMAC/introns.ret.samp.RData")
-BlMo_Hm01.retint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm01_retint.txt", sep = "\t", header = T)
+BlMo_Hm01.retint.GCcont<-read.delim("Intronic_GC_contentGC_BlMo_Hm01_retint.txt", sep = "\t", header = T)
 introns.ret.samp[[1]]$GCcont_int<-BlMo_Hm01.retint.GCcont$X8_pct_gc[match(paste(introns.ret.samp[[1]]$Chromosome,introns.ret.samp[[1]]$Start, sep = ":"), paste0("chr",BlMo_Hm01.retint.GCcont$X.1_usercol,":",BlMo_Hm01.retint.GCcont$X2_usercol))]
-BlMo_Hm01.nonretint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm01_nonretint.txt", sep = "\t", header = T)
+BlMo_Hm01.nonretint.GCcont<-read.delim("Intronic_GC_content/GC_BlMo_Hm01_nonretint.txt", sep = "\t", header = T)
 introns.nonret.samp[[1]]$GCcont_int<-BlMo_Hm01.nonretint.GCcont$X8_pct_gc[match(paste(introns.nonret.samp[[1]]$Chromosome,introns.nonret.samp[[1]]$Start, sep = ":"), paste0("chr",BlMo_Hm01.nonretint.GCcont$X.1_usercol,":",BlMo_Hm01.nonretint.GCcont$X2_usercol))]
 
-BlMo_Hm03.retint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm03_retint.txt", sep = "\t", header = T)
+BlMo_Hm03.retint.GCcont<-read.delim("Intronic_GC_content/GC_BlMo_Hm03_retint.txt", sep = "\t", header = T)
 introns.ret.samp[[2]]$GCcont_int<-BlMo_Hm03.retint.GCcont$X8_pct_gc[match(paste(introns.ret.samp[[2]]$Chromosome,introns.ret.samp[[2]]$Start, sep = ":"), paste0("chr",BlMo_Hm03.retint.GCcont$X.1_usercol,":",BlMo_Hm03.retint.GCcont$X2_usercol))]
-BlMo_Hm03.nonretint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm03_nonretint.txt", sep = "\t", header = T)
+BlMo_Hm03.nonretint.GCcont<-read.delim("Intronic_GC_content/GC_BlMo_Hm03_nonretint.txt", sep = "\t", header = T)
 introns.nonret.samp[[2]]$GCcont_int<-BlMo_Hm03.nonretint.GCcont$X8_pct_gc[match(paste(introns.nonret.samp[[2]]$Chromosome,introns.nonret.samp[[2]]$Start, sep = ":"), paste0("chr",BlMo_Hm03.nonretint.GCcont$X.1_usercol,":",BlMo_Hm03.nonretint.GCcont$X2_usercol))]
 
-BlMo_Hm05.retint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm05_retint.txt", sep = "\t", header = T)
+BlMo_Hm05.retint.GCcont<-read.delim("Intronic_GC_content/GC_BlMo_Hm05_retint.txt", sep = "\t", header = T)
 introns.ret.samp[[3]]$GCcont_int<-BlMo_Hm05.retint.GCcont$X8_pct_gc[match(paste(introns.ret.samp[[3]]$Chromosome,introns.ret.samp[[3]]$Start, sep = ":"), paste0("chr",BlMo_Hm05.retint.GCcont$X.1_usercol,":",BlMo_Hm05.retint.GCcont$X2_usercol))]
-BlMo_Hm05.nonretint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMo/GC_BlMo_Hm05_nonretint.txt", sep = "\t", header = T)
+BlMo_Hm05.nonretint.GCcont<-read.delim("Intronic_GC_content/GC_BlMo_Hm05_nonretint.txt", sep = "\t", header = T)
 introns.nonret.samp[[3]]$GCcont_int<-BlMo_Hm05.nonretint.GCcont$X8_pct_gc[match(paste(introns.nonret.samp[[3]]$Chromosome,introns.nonret.samp[[3]]$Start, sep = ":"), paste0("chr",BlMo_Hm05.nonretint.GCcont$X.1_usercol,":",BlMo_Hm05.nonretint.GCcont$X2_usercol))]
 
-BlMa_Hm03.retint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMa/GC_BlMa_Hm03_retint.txt", sep = "\t", header = T)
+BlMa_Hm03.retint.GCcont<-read.delim("Intronic_GC_content/GC_BlMa_Hm03_retint.txt", sep = "\t", header = T)
 introns.ret.samp[[4]]$GCcont_int<-BlMa_Hm03.retint.GCcont$X8_pct_gc[match(paste(introns.ret.samp[[4]]$Chromosome,introns.ret.samp[[4]]$Start, sep = ":"), paste0("chr",BlMa_Hm03.retint.GCcont$X.1_usercol,":",BlMa_Hm03.retint.GCcont$X2_usercol))]
-BlMa_Hm03.nonretint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMa/GC_BlMa_Hm03_nonretint.txt", sep = "\t", header = T)
+BlMa_Hm03.nonretint.GCcont<-read.delim("Intronic_GC_content/GC_BlMa_Hm03_nonretint.txt", sep = "\t", header = T)
 introns.nonret.samp[[4]]$GCcont_int<-BlMa_Hm03.nonretint.GCcont$X8_pct_gc[match(paste(introns.nonret.samp[[4]]$Chromosome,introns.nonret.samp[[4]]$Start, sep = ":"), paste0("chr",BlMa_Hm03.nonretint.GCcont$X.1_usercol,":",BlMa_Hm03.nonretint.GCcont$X2_usercol))]
 
-BlMa_Hm05.retint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMa/GC_BlMa_Hm05_retint.txt", sep = "\t", header = T)
+BlMa_Hm05.retint.GCcont<-read.delim("Intronic_GC_content/GC_BlMa_Hm05_retint.txt", sep = "\t", header = T)
 introns.ret.samp[[5]]$GCcont_int<-BlMa_Hm05.retint.GCcont$X8_pct_gc[match(paste(introns.ret.samp[[5]]$Chromosome,introns.ret.samp[[5]]$Start, sep = ":"), paste0("chr",BlMa_Hm05.retint.GCcont$X.1_usercol,":",BlMa_Hm05.retint.GCcont$X2_usercol))]
-BlMa_Hm05.nonretint.GCcont<-read.delim("/spectrum/GSCT/veronikap/DEEP/GCcount/BlMa/GC_BlMa_Hm05_nonretint.txt", sep = "\t", header = T)
+BlMa_Hm05.nonretint.GCcont<-read.delim("Intronic_GC_content/GC_BlMa_Hm05_nonretint.txt", sep = "\t", header = T)
 introns.nonret.samp[[5]]$GCcont_int<-BlMa_Hm05.nonretint.GCcont$X8_pct_gc[match(paste(introns.nonret.samp[[5]]$Chromosome,introns.nonret.samp[[5]]$Start, sep = ":"), paste0("chr",BlMa_Hm05.nonretint.GCcont$X.1_usercol,":",BlMa_Hm05.nonretint.GCcont$X2_usercol))]
 
 
 
 ## flanking exons coordinates are identified using candidate.exons.txt generated by IRFinderPooled
 
-all.exons<-read.delim("/spectrum/GSCT/veronikap/REF/candidate.exons.txt", header = F)
+all.exons<-read.delim("candidate.exons.txt", header = F)
 colnames(all.exons)<-c("Chromosome", "Start", "End", "Code", "Empty", "Strand")
 all.exons$Chromosome<-sub("^", "chr", all.exons$Chromosome)
 all.exons$Code<-strsplit(as.character(all.exons$Code), split="/")
@@ -74,11 +74,11 @@ for (i in 1:length(introns.ret.samp)) {
 
 
 ## determine GC contnet using bedtools and loading the output files back into R
-GCcont.exons.flank5ss.files<-c("/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm01.retint.flankexons5ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm03.retint.flankexons5ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm05.retint.flankexons5ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMa_Hm03.retint.flankexons5ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMa_Hm05.retint.flankexons5ss.txt")
+GCcont.exons.flank5ss.files<-c("Intronic_GC_content/GC_BlMo_Hm01.retint.flankexons5ss.txt",
+                               "Intronic_GC_content/GC_BlMo_Hm03.retint.flankexons5ss.txt",
+                               "Intronic_GC_content/GC_BlMo_Hm05.retint.flankexons5ss.txt",
+                               "Intronic_GC_content/GC_BlMa_Hm03.retint.flankexons5ss.txt",
+                               "Intronic_GC_content/GC_BlMa_Hm05.retint.flankexons5ss.txt")
 
 GCcont.exons.flank5ss.retint<-list()
 for (i in 1:length(introns.ret.samp)) {
@@ -93,11 +93,11 @@ for (i in 1:length(introns.ret.samp)) {
   introns.ret.samp[[i]]$GCcont_5ssexon<-GCcont.exons.flank5ss.retint[[i]]$X8_pct_gc[ifelse(introns.ret.samp[[i]]$Strand=="+", match(paste(introns.ret.samp[[i]]$Chromosome, introns.ret.samp[[i]]$Start, sep = ":"), paste0("chr",GCcont.exons.flank5ss.retint[[i]]$X.1_usercol,":",GCcont.exons.flank5ss.retint[[i]]$X3_usercol)),
                                                                                            match(paste(introns.ret.samp[[i]]$Chromosome, introns.ret.samp[[i]]$End, sep = ":"), paste0("chr",GCcont.exons.flank5ss.retint[[i]]$X.1_usercol,":",GCcont.exons.flank5ss.retint[[i]]$X2_usercol)))]}
 
-GCcont.exons.flank3ss.files<-c("/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm01.retint.flankexons3ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm03.retint.flankexons3ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMo_Hm05.retint.flankexons3ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMa_Hm03.retint.flankexons3ss.txt",
-                               "/spectrum/GSCT/veronikap/DEEP/GCcount/GC_BlMa_Hm05.retint.flankexons3ss.txt")
+GCcont.exons.flank3ss.files<-c("Intronic_GC_content/GC_BlMo_Hm01.retint.flankexons3ss.txt",
+                               "Intronic_GC_content/GC_BlMo_Hm03.retint.flankexons3ss.txt",
+                               "Intronic_GC_content/GC_BlMo_Hm05.retint.flankexons3ss.txt",
+                               "Intronic_GC_content/GC_BlMa_Hm03.retint.flankexons3ss.txt",
+                               "Intronic_GC_content/GC_BlMa_Hm05.retint.flankexons3ss.txt")
 
 GCcont.exons.flank3ss.retint<-list()
 for (i in 1:length(introns.ret.samp)) {
@@ -119,11 +119,11 @@ for (i in 1:length(introns.ret.samp)) {
 
 
 ## loading PSI values for exons into R
-PSI.exons.files<-c("/spectrum/GSCT/veronikap/DEEP/PSI/BlMo/Hm01_BlMo_exonic_parts.psi",
-                   "/spectrum/GSCT/veronikap/DEEP/PSI/BlMo/Hm03_BlMo_exonic_parts.psi",
-                   "/spectrum/GSCT/veronikap/DEEP/PSI/BlMo/Hm05_BlMo_exonic_parts.psi",
-                   "/spectrum/GSCT/veronikap/DEEP/PSI/BlMa/Hm03_BlMa_exonic_parts.psi",
-                   "/spectrum/GSCT/veronikap/DEEP/PSI/BlMa/Hm05_BlMa_exonic_parts.psi")
+PSI.exons.files<-c("exonic_psi/Hm01_BlMo_exonic_parts.psi",
+                   "exonic_psi/Hm03_BlMo_exonic_parts.psi",
+                   "exonic_psi/Hm05_BlMo_exonic_parts.psi",
+                   "exonic_psi/Hm03_BlMa_exonic_parts.psi",
+                   "exonic_psi/Hm05_BlMa_exonic_parts.psi")
 
 PSI.exons<-list()
 for (i in 1:length(PSI.exons.files)) {
@@ -145,22 +145,22 @@ for (i in 1:length(introns.ret.samp)) {
 
 
 ## Loading Maximum Entropy scores for the splice sites
-MaxEntScore.retint.5ss.files<-c("/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm01/BlMo_Hm01_retint_5ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm03/BlMo_Hm03_retint_5ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm05/BlMo_Hm05_retint_5ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMa_Hm03/BlMa_Hm03_retint_5ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMa_Hm05/BlMa_Hm05_retint_5ss.txt")
+MaxEntScore.retint.5ss.files<-c("MaxEntScan/BlMo_Hm01_retint_5ss.txt",
+                                "MaxEntScan/BlMo_Hm03_retint_5ss.txt",
+                                "MaxEntScan/BlMo_Hm05_retint_5ss.txt",
+                                "MaxEntScan/BlMa_Hm03_retint_5ss.txt",
+                                "MaxEntScan/BlMa_Hm05_retint_5ss.txt")
 
 MaxEntScore.retint.5ss<-list()
 for (i in 1:length(introns.ret.samp)) {
   MaxEntScore.retint.5ss[[i]]<-read.delim(MaxEntScore.retint.5ss.files[i], sep = "\t", header = F)
 }
 
-MaxEntScore.retint.3ss.files<-c("/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm01/BlMo_Hm01_retint_3ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm03/BlMo_Hm03_retint_3ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMo_Hm05/BlMo_Hm05_retint_3ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMa_Hm03/BlMa_Hm03_retint_3ss.txt",
-                                "/spectrum/GSCT/veronikap/DEEP/MaxEntScan/BlMa_Hm05/BlMa_Hm05_retint_3ss.txt")
+MaxEntScore.retint.3ss.files<-c("MaxEntScan/BlMo_Hm01_retint_3ss.txt",
+                                "MaxEntScan/BlMo_Hm03_retint_3ss.txt",
+                                "MaxEntScan/BlMo_Hm05_retint_3ss.txt",
+                                "MaxEntScan/BlMa_Hm03_retint_3ss.txt",
+                                "MaxEntScan/BlMa_Hm05_retint_3ss.txt")
 
 MaxEntScore.retint.3ss<-list()
 for (i in 1:length(introns.ret.samp)) {
@@ -184,6 +184,6 @@ for (i in 1:length(introns.ret.samp)) {
                                             else if (x<=15) "Strong")
 }
 
- save(introns.ret.samp, file = "/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+ save(introns.ret.samp, file = "introns.ret.samp.RData")
 
  ## the same procedure is repeated for non-retained introns

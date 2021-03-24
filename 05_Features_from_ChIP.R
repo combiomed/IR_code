@@ -1,14 +1,14 @@
 ## ChIP-seq files processed in MACS2 are used in this step
 ## GRanges for 5' splice site are generated as described in 03_Features_from_WGBS
 
-load("/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+load("introns.ret.samp.RData")
 
-Hm01.BlMo.ChIPseq.files<-c('/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K27ac_peaks.xls',
-                           '/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K27me3_peaks.xls',
-                           '/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K36me3_peaks.xls',
-                           '/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K4me1_peaks.xls',
-                           '/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K4me3_peaks.xls',
-                           '/spectrum/GSCT/veronikap/DEEP/ChIP/BlMo/Hm01/macs/Hm01_BlMo_H3K9me3_peaks.xls')
+Hm01.BlMo.ChIPseq.files<-c('ChIP/Hm01_BlMo_H3K27ac_peaks.xls',
+                           'ChIP/Hm01_BlMo_H3K27me3_peaks.xls',
+                           'ChIP/Hm01_BlMo_H3K36me3_peaks.xls',
+                           'ChIP/Hm01_BlMo_H3K4me1_peaks.xls',
+                           'ChIP/Hm01_BlMo_H3K4me3_peaks.xls',
+                           'ChIP/Hm01_BlMo_H3K9me3_peaks.xls')
 
 Hm01.BlMo.ChIP.narrowpeaks<-list()
 for (i in 1:length(Hm01.BlMo.ChIPseq.files)) {
@@ -86,7 +86,7 @@ introns.ret.samp[[1]]$H3K4me3_pileup_100bp5ss<-ifelse(is.na(introns.ret.samp[[1]
 introns.ret.samp[[1]]$H3K9me3_olap_100bp5ss<-ifelse(is.na(introns.ret.samp[[1]]$H3K9me3_olap_100bp5ss), 0, introns.ret.samp[[1]]$H3K9me3_olap_100bp5ss)
 introns.ret.samp[[1]]$H3K9me3_pileup_100bp5ss<-ifelse(is.na(introns.ret.samp[[1]]$H3K9me3_pileup_100bp5ss), 0, introns.ret.samp[[1]]$H3K9me3_pileup_100bp5ss)
 
-save(introns.ret.samp, file = "/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+save(introns.ret.samp, file = "introns.ret.samp.RData")
 
 ##same is repeated for 3' splice site and the middle of intron
 ##and non-retained introns

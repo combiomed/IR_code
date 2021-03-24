@@ -9,12 +9,12 @@ library(ggthemes)
 library(ggplot2)
 library(pROC)
 
-## data.files contain cleaned datasets for modelling built as described in previous steps
-data.files<-c("~/MONvsMAC/GLM/BlMo.model.data.global.RData",
-              "~/MONvsMAC/GLM/BlMa.model.data.global.RData",
-              "~/MONvsMAC/GLM/BlTN.model.data.global.RData",
-              "~/MONvsMAC/GLM/BlCM.model.data.global.RData",
-              "~/MONvsMAC/GLM/BlEM.model.data.global.RData")
+## data.files contain cleaned datasets for modeling built as described in previous steps
+data.files<-c("BlMo.model.data.global.RData",
+              "BlMa.model.data.global.RData",
+              "BlTN.model.data.global.RData",
+              "BlCM.model.data.global.RData",
+              "BlEM.model.data.global.RData")
 global.data<-lapply(data.files, function (x) get(load(x)))
 
 
@@ -53,11 +53,11 @@ for (i in 1:length(global.data)){
 }
 
 ##loading glmnet models
-glmnet.intrinall.files<-c("~/MONvsMAC/GLMNET/FittedModels/BlMo.glmnet.model.intrinsicall.cv10.RData",
-                           "~/MONvsMAC/GLMNET/FittedModels/BlMa.glmnet.model.intrinsicall.cv10.RData",
-                           "~/MONvsMAC/GLMNET/FittedModels/BlTN.glmnet.model.intrinsicall.cv10.RData",
-                           "~/MONvsMAC/GLMNET/FittedModels/BlCM.glmnet.model.intrinsicall.cv10.RData",
-                           "~/MONvsMAC/GLMNET/FittedModels/BlEM.glmnet.model.intrinsicall.cv10.RData")
+glmnet.intrinall.files<-c("BlMo.glmnet.model.intrinsicall.cv10.RData",
+                           "BlMa.glmnet.model.intrinsicall.cv10.RData",
+                           "BlTN.glmnet.model.intrinsicall.cv10.RData",
+                           "BlCM.glmnet.model.intrinsicall.cv10.RData",
+                           "BlEM.glmnet.model.intrinsicall.cv10.RData")
 glmnet.intrinall<-lapply(glmnet.intrinall.files, function (x) get(load(x)))
 
 ## assessing confusion matrices and roc values
@@ -73,11 +73,11 @@ for (i in 1:length(model.data)){
 }
 
 ##loading conditional random forest models
-cforest.intrinall.files<-c("~/MONvsMAC/GLMNET/FittedModels/BlMo.cforest.model.intrinsicall.cv10.RData",
-                    "~/MONvsMAC/GLMNET/FittedModels/BlMa.cforest.model.intrinsicall.cv10.RData",
-                    "~/MONvsMAC/GLMNET/FittedModels/BlTN.cforest.model.intrinsicall.cv10.RData",
-                    "~/MONvsMAC/GLMNET/FittedModels/BlCM.cforest.model.intrinsicall.cv10.RData",
-                    "~/MONvsMAC/GLMNET/FittedModels/BlEM.cforest.model.intrinsicall.cv10.RData")
+cforest.intrinall.files<-c("BlMo.cforest.model.intrinsicall.cv10.RData",
+                    "BlMa.cforest.model.intrinsicall.cv10.RData",
+                    "BlTN.cforest.model.intrinsicall.cv10.RData",
+                    "BlCM.cforest.model.intrinsicall.cv10.RData",
+                    "BlEM.cforest.model.intrinsicall.cv10.RData")
 cforest.intrinall<-lapply(cforest.intrinall.files, function (x) get(load(x)))
 names(cforest.intrinall)<-c("BlMo", "BlMa", "BlTN", "BlCM", "BlEM")
 

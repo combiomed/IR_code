@@ -3,9 +3,9 @@
 
 library(GenomicRanges)
 
-load("~/MONvsMAC/Meth.gr.RData")
-load("~/R Analysis/MethData.filtered.RData")
-load("/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+load("Meth.gr.RData")
+load("MethData.filtered.RData")
+load("introns.ret.samp.RData")
 
 ## creating GRanges for 5' splice site
 retint.5splicepos.gr<-GRangesList()
@@ -93,7 +93,7 @@ for (i in 1:length(Meth.gr)) {
   retint.middle.gr[[i]]<-makeGRangesFromDataFrame(introns.ret.samp[[i]], seqnames.field = "Chromosome", start.field = "Middle", end.field = "Middle", strand.field = "Strand")
 }
 
-save(introns.ret.samp, file = "/home/veronikap/MONvsMAC/introns.ret.samp.RData")
+save(introns.ret.samp, file = "introns.ret.samp.RData")
 
 ## methylation data for 3' splice site and middle of intron is summarised in the same way
 ## the same procedure is repeated for the non-retained introns

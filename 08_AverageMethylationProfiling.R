@@ -7,10 +7,10 @@ library(dplyr)
 library(reshape2)
 library(ggplot2)
 
-load("~/MONvsMAC/Meth.gr.RData")
-load("~/R Analysis/MethData.filtered.RData")
-load("/home/veronikap/MONvsMAC/introns.ret.samp.RData")
-load("/home/veronikap/MONvsMAC/introns.nonret.samp.RData")
+load("Meth.gr.RData")
+load("MethData.filtered.RData")
+load("introns.ret.samp.RData")
+load("introns.nonret.samp.RData")
 
 ## creating GRanges for 5' splice sites of introns
 
