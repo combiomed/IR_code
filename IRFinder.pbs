@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# IRFinder
+
+#PBS -P RDS-SMS-intronret-RW
+#PBS -N IRFinder
+#PBS -l select=1:ncpus=4:mem=96GB
+#PBS -l walltime=24:00:00
+#PBS -q alloc-jr
+#PBS -j oe
+
+module load gcc/6.2.0
+module load bedtools
+module load star
+
+REF=/scratch/RDS-SMS-intronret-RW/veronika/REF/Human-GRCh38-release86
+INPUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/mRNA/Tcells/BlTN
+OUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/IRFoutput/BlTN
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf03_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf03_${file} -r ${REF} ${INPUTDIR}/51_Hf03_BlTN_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf03_BlTN_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf04_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf04_${file} -r ${REF} ${INPUTDIR}/51_Hf04_BlTN_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf04_BlTN_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in Hf03 Hf04
+do
+	mkdir ${OUTDIR}/${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -m BAM -d ${OUTDIR}/${file} -r ${REF} <(samtools cat ${OUTDIR}/${file}_L001/Unsorted.bam ${OUTDIR}/${file}_L002/Unsorted.bam ${OUTDIR}/${file}_L003/Unsorted.bam)
+done
+
+INPUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/mRNA/Tcells/BlCM
+OUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/IRFoutput/BlCM
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf03_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf03_${file} -r ${REF} ${INPUTDIR}/51_Hf03_BlCM_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf03_BlCM_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf04_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf04_${file} -r ${REF} ${INPUTDIR}/51_Hf04_BlCM_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf04_BlCM_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in Hf03 Hf04
+do
+	mkdir ${OUTDIR}/${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -m BAM -d ${OUTDIR}/${file} -r ${REF} <(samtools cat ${OUTDIR}/${file}_L001/Unsorted.bam ${OUTDIR}/${file}_L002/Unsorted.bam ${OUTDIR}/${file}_L003/Unsorted.bam)
+done
+
+INPUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/mRNA/Tcells/BlEM
+OUTDIR=/scratch/RDS-SMS-intronret-RW/veronika/DEEP/IRFoutput/BlEM
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf03_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf03_${file} -r ${REF} ${INPUTDIR}/51_Hf03_BlEM_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf03_BlEM_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in L001 L002 L003
+do
+	mkdir ${OUTDIR}/Hf04_${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -t 4 -d ${OUTDIR}/Hf04_${file} -r ${REF} ${INPUTDIR}/51_Hf04_BlEM_Ct_mRNA_M_1_ACAGTG_${file}_R1_001.fastq.gz ${INPUTDIR}/51_Hf04_BlEM_Ct_mRNA_M_1_ACAGTG_${file}_R2_001.fastq.gz
+done
+
+for file in Hf03 Hf04
+do
+	mkdir ${OUTDIR}/${file}
+	./bin/IRFinder-1.2.5/IRFinder-1.2.5/bin/IRFinder -m BAM -d ${OUTDIR}/${file} -r ${REF} <(samtools cat ${OUTDIR}/${file}_L001/Unsorted.bam ${OUTDIR}/${file}_L002/Unsorted.bam ${OUTDIR}/${file}_L003/Unsorted.bam)
+done
